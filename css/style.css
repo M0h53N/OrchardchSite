@@ -50,7 +50,7 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 90px;
     width: auto;
     display: block;
 }
@@ -930,4 +930,5 @@ footer p {
         display: block;
         margin-bottom: 0.5rem;
     }
+
 }
