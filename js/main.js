@@ -80,19 +80,41 @@ function addScrollAnimations() {
     });
 }
 
-/**
- * Mobile menu toggle (for future enhancement)
- */
-function initMobileMenu() {
-    // This function can be expanded to add a hamburger menu for mobile devices
-    const navbar = document.querySelector('.navbar');
-    
-    // Add mobile menu toggle button dynamically if needed
-    if (window.innerWidth <= 768) {
-        // Mobile menu logic can be added here
-    }
-}
 
-// Initialize mobile menu on load and resize
-window.addEventListener('load', initMobileMenu);
-window.addEventListener('resize', initMobileMenu);
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script loaded');
+    
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    console.log('Hamburger:', hamburger);
+    console.log('Nav menu:', navMenu);
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('Hamburger clicked!');
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close menu when any link is clicked
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.navbar')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    } else {
+        console.log('ERROR: Elements not found!');
+    }
+});
