@@ -1,0 +1,1143 @@
+/* ========================================
+   RESET AND BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.navbar {
+    background-color: #2c5f2d;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+    color: #a8d5ba;
+}
+
+.nav-links a.active {
+    color: #a8d5ba;
+    border-bottom: 2px solid #a8d5ba;
+}
+@media (max-width: 768px) {
+  .navbar .container {
+    position: relative;
+  }
+  
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .logo img {
+    max-height: 40px;
+    width: auto;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 15px;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    background: linear-gradient(135deg, #2c5f2d 0%, #4a8c4f 100%);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.page-header {
+    background: linear-gradient(135deg, #2c5f2d 0%, #4a8c4f 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   MAIN CONTENT SECTIONS
+   ======================================== */
+main {
+    min-height: 60vh;
+}
+
+.intro-section,
+.homes-preview,
+.homes-detail,
+.referral-content,
+.therapeutic-content,
+.contact-content {
+    padding: 4rem 0;
+}
+
+.intro-section {
+    background-color: white;
+}
+
+.intro-section h2 {
+    font-size: 2rem;
+    color: #2c5f2d;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.intro-content .highlight {
+    font-style: italic;
+    color: #2c5f2d;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   HOMES PREVIEW GRID
+   ======================================== */
+.homes-preview {
+    background-color: #f8f9fa;
+}
+
+.homes-preview h2 {
+    font-size: 2rem;
+    color: #2c5f2d;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.homes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.home-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.home-card h3 {
+    color: #2c5f2d;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   HOMES DETAIL PAGE
+   ======================================== */
+.home-detail {
+    background: white;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.home-detail:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Home Header with Badges */
+.home-header {
+    margin-bottom: 2rem;
+}
+
+.home-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 3px solid #a8d5ba;
+    padding-bottom: 1rem;
+}
+
+.home-detail h2 {
+    color: #2c5f2d;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.home-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.badge.ofsted {
+    background-color: #2c5f2d;
+    color: white;
+}
+
+.badge.registered {
+    background-color: #4a8c4f;
+    color: white;
+}
+
+/* Home Layout - Image and Content Side by Side */
+.home-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Home Image Container */
+.home-image {
+    position: relative;
+}
+
+.home-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.home-capacity {
+    background: linear-gradient(135deg, #2c5f2d 0%, #4a8c4f 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.home-capacity strong {
+    color: #a8d5ba;
+}
+
+/* Home Content Text */
+.home-content p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.home-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   CONTENT SECTIONS (Referral, Therapeutic)
+   ======================================== */
+.content-section {
+    background: white;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    color: #2c5f2d;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #2c5f2d 0%, #4a8c4f 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.referral-contact {
+    margin-top: 1.5rem;
+}
+
+.referral-contact p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.referral-contact a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.referral-contact a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Homes Contact Table */
+.homes-table-wrapper {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+.homes-contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.homes-contact-table thead {
+    background: linear-gradient(135deg, #2c5f2d 0%, #4a8c4f 100%);
+    color: white;
+}
+
+.homes-contact-table th {
+    padding: 1.2rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.homes-contact-table td {
+    padding: 1.5rem 1.2rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.homes-contact-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.homes-contact-table a {
+    color: #2c5f2d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.homes-contact-table a:hover {
+    color: #1f4320;
+    text-decoration: underline;
+}
+
+/* ========================================
+   MEET THE TEAM PAGE
+   ======================================== */
+.team-content {
+    padding: 4rem 0;
+}
+
+.team-member {
+    background: white;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.team-image {
+    position: relative;
+}
+
+.team-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.team-info h2 {
+    color: #2c5f2d;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-info h3 {
+    color: #4a8c4f;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.team-info p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.team-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #2c5f2d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #1f4320;
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: white;
+    color: #2c5f2d;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+/* ========================================
+   CONTACT PAGE
+   ======================================== */
+.contact-single-column {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-single-column h2 {
+    color: #2c5f2d;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.contact-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-icon svg {
+    stroke-width: 2;
+}
+
+.contact-card h3 {
+    color: #2c5f2d;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-card p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.contact-card a {
+    color: #2c5f2d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #1f4320;
+    text-decoration: underline;
+}
+
+/* Old contact grid - remove */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info,
+.contact-form-wrapper {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2,
+.contact-form-wrapper h2 {
+    color: #2c5f2d;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.contact-details {
+    margin-top: 2rem;
+}
+
+.detail-item {
+    margin-bottom: 2rem;
+}
+
+.detail-item h3 {
+    color: #2c5f2d;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-item p {
+    color: #666;
+    margin: 0;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #2c5f2d;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2c5f2d;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    background-color: #2c5f2d;
+    color: white;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+}
+
+footer .container {
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #a8d5ba;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .homes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Details Grid Responsive */
+    .contact-details-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-single-column h2 {
+        font-size: 2rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Home Detail Responsive */
+    .home-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .home-image {
+        order: -1; /* Image appears first on mobile */
+    }
+
+    .home-image img {
+        height: 250px;
+    }
+
+    .home-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-badges {
+        width: 100%;
+    }
+
+    .home-detail {
+        padding: 2rem;
+    }
+
+    .home-detail h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Team Member Responsive */
+    .team-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .team-image img {
+        height: 250px;
+    }
+
+    .team-member {
+        padding: 2rem;
+    }
+
+    /* Referrals Table Responsive */
+    .homes-contact-table {
+        font-size: 0.95rem;
+    }
+
+    .homes-contact-table th,
+    .homes-contact-table td {
+        padding: 1rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .intro-section h2,
+    .homes-preview h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-detail,
+    .content-section,
+    .contact-info,
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .home-detail h2 {
+        font-size: 1.6rem;
+    }
+
+    .home-image img {
+        height: 220px;
+    }
+
+    .home-capacity {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    /* Contact Page Mobile */
+    .contact-single-column h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-card p {
+        font-size: 1rem;
+    }
+
+    /* Team Member Mobile */
+    .team-member {
+        padding: 1.5rem;
+    }
+
+    .team-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .team-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .team-image img {
+        height: 200px;
+    }
+
+    /* Table Mobile - Stack Vertically */
+    .homes-contact-table thead {
+        display: none;
+    }
+
+    .homes-contact-table,
+    .homes-contact-table tbody,
+    .homes-contact-table tr,
+    .homes-contact-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .homes-contact-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .homes-contact-table td {
+        text-align: left;
+        padding: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .homes-contact-table td:last-child {
+        border-bottom: none;
+    }
+
+    .homes-contact-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #2c5f2d;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+}
+@media (max-width: 768px) {
+  .navbar .container {
+    position: relative;
+  }
+  
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .logo img {
+    max-height: 40px;
+    width: auto;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 15px;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar .container {
+    position: relative;
+  }
+  
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .logo img {
+    max-height: 40px;
+    width: auto;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 15px;
+    color: #333 !important;  /* Force dark text color */
+    text-decoration: none;
+  }
+  
+  .nav-links li a.active {
+    color: #4CAF50 !important;  /* Active link color - adjust to your preference */
+    font-weight: bold;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
